@@ -1,4 +1,5 @@
-// src/app/contact/page.tsx
+"use client"; // Shto këtë direktivë për ta bërë komponentin një Client Component
+
 import { useState } from 'react';
 
 export default function Contact() {
@@ -12,13 +13,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white shadow-lg p-8 max-w-lg rounded-lg">
-        <h1 className="text-3xl font-bold text-center mb-8">Contact Us</h1>
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center py-20">
+      <div className="bg-gray-800 shadow-lg p-8 max-w-lg rounded-lg text-white">
+        <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
+        <form onSubmit={handleSubmit} className="space-y-6">
           <input
             type="text"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 bg-gray-700 border-none rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
             placeholder="Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -26,14 +27,14 @@ export default function Contact() {
           />
           <input
             type="email"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 bg-gray-700 border-none rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
             placeholder="Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
           <textarea
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 bg-gray-700 border-none rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
             placeholder="Your Message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -41,7 +42,7 @@ export default function Contact() {
           />
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+            className="w-full px-4 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition duration-300"
           >
             Send Message
           </button>
