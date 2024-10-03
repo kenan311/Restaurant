@@ -39,19 +39,72 @@ export default function Home() {
         )}
       </header>
 
-      {/* Hero Section */}
-      <div className="relative h-screen bg-[url('/hero-image.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div className="relative z-10 flex flex-col justify-center items-center h-full text-white text-center">
-          <h1 className="text-6xl font-extrabold mb-4">A Fresh Take on Mediterranean</h1>
-          <p className="text-2xl mb-8">Discover the rich flavors of the Mediterranean, crafted with care.</p>
+      
+
+      
+      {/* Hero Section with Collage */}
+      <div className="relative h-screen bg-cover bg-center" 
+     style={{ backgroundImage: "url('https://i.postimg.cc/MKXJVrRJ/restaurant.png')" }}>
+  <div className="absolute inset-0 bg-black opacity-65"></div> {/* Overlay për ta bërë më të errët */}
+  <div className="relative h-full flex justify-center items-center">
+    {/* Main Image in the center */}
+    <div className="relative z-10">
+      <img 
+        src="https://i.postimg.cc/MKXJVrRJ/restaurant.png" 
+        alt="Restaurant Main" 
+        className="w-[800px] h-[700px] object-cover rounded-lg shadow-2xl" 
+        style={{ border: "5px solid white" }}
+      />
+        </div>
+
+        {/* Collage Images - Top Left and Right, Bottom Left and Right */}
+        <div className="absolute z-10 top-20 left-10 transform rotate-6">
+          <img 
+            src="https://i.postimg.cc/4xZjYGk5/home-dish.png" 
+            alt="Dish 1" 
+            className="w-[140px] h-[140px] object-cover rounded-lg shadow-lg" 
+            style={{ border: "4px solid white" }} 
+          />
+        </div>
+        <div className="absolute z-10 top-20 right-12 transform -rotate-6">
+          <img 
+            src="https://i.postimg.cc/C5Tm9CwN/home-dish2.png" 
+            alt="Dish 2" 
+            className="w-40 h-40 object-cover rounded-lg shadow-lg" 
+            style={{ border: "4px solid white" }} 
+          />
+        </div>
+        <div className="absolute z-10 bottom-12 left-16 transform rotate-3">
+          <img 
+            src="https://i.postimg.cc/85ntSwCL/home-dish3.png" 
+            alt="Dish 3" 
+            className="w-36 h-36 object-cover rounded-lg shadow-lg" 
+            style={{ border: "4px solid white" }} 
+          />
+        </div>
+        <div className="absolute z-10 bottom-16 right-10 transform -rotate-3">
+          <img 
+            src="https://i.postimg.cc/DwPVTk3s/home-dish4.png" 
+            alt="Dish 4" 
+            className="w-[142px] h-[158px] object-cover rounded-lg shadow-lg" 
+            style={{ border: "4px solid white" }} 
+          />
+        </div>
+
+        {/* Text and Button */}
+        <div className="absolute z-20 flex flex-col justify-center items-center text-center text-white">
+          <h1 className="text-5xl font-extrabold mb-4">A Fresh Take on Mediterranean</h1>
+          <p className="text-lg mb-8">Discover the rich flavors of the Mediterranean, crafted with care.</p>
           <Link href="/menu">
-            <button className="px-8 py-3 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition duration-300">
+            <button className="px-6 py-3 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition duration-300">
               Explore Our Menu
             </button>
           </Link>
         </div>
       </div>
+    </div>
+
+
 
       {/* Menu Section */}
       <section className="py-20">
