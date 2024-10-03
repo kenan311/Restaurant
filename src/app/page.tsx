@@ -191,7 +191,7 @@ export default function Home() {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.9240362763657!2d-122.08424968484773!3d37.421999779821106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb735d5a63d17%3A0xe58b522acdd1f78e!2sGoogleplex!5e0!3m2!1sen!2sus!4v1630428590269!5m2!1sen!2sus"
           width="100%"
           height="100%"
-          allowFullScreen=""
+         
           loading="lazy"
           title="Restaurant Location"
         ></iframe>
