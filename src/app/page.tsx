@@ -10,35 +10,37 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
+      <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white shadow-lg z-50">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
-          <h1 className="text-3xl font-bold text-gray-900">Luxury Eats</h1>
+          <h1 className="text-3xl font-bold text-white">Luxury Eats</h1>
           <nav className="hidden md:flex space-x-6 text-lg">
-            <Link href="/" className="hover:text-yellow-500">Home</Link>
-            <Link href="/menu" className="hover:text-yellow-500">Menu</Link>
-            <Link href="/about" className="hover:text-yellow-500">About Us</Link>
-            <Link href="/contact" className="hover:text-yellow-500">Contact</Link>
-            <Link href="/reservation" className="bg-yellow-500 px-4 py-2 rounded-full text-white hover:bg-yellow-600">Reserve a Table</Link>
+            {/* Përdorim padding për të barazuar madhësinë e lidhjeve me butonin */}
+            <Link href="/" className="text-white px-4 py-2 hover:text-yellow-400 transition duration-300">Home</Link>
+            <Link href="/menu" className="text-white px-4 py-2 hover:text-yellow-400 transition duration-300">Menu</Link>
+            <Link href="/about" className="text-white px-4 py-2 hover:text-yellow-400 transition duration-300">About Us</Link>
+            <Link href="/contact" className="text-white px-4 py-2 hover:text-yellow-400 transition duration-300">Contact</Link>
+            <Link href="/reservation" className="px-4 py-2 bg-yellow-500 rounded-full text-white hover:bg-yellow-600 transition duration-300 shadow-lg">Reserve a Table</Link>
           </nav>
           <button
-            className="md:hidden text-3xl"
+            className="md:hidden text-3xl text-white focus:outline-none"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
             &#9776;
           </button>
         </div>
+
         {/* Mobile Menu */}
         {navbarOpen && (
-          <div className="md:hidden bg-white px-6 py-4">
-            <Link href="/" className="block py-2 hover:text-yellow-500">Home</Link>
-            <Link href="/menu" className="block py-2 hover:text-yellow-500">Menu</Link>
-            <Link href="/about" className="block py-2 hover:text-yellow-500">About Us</Link>
-            <Link href="/contact" className="block py-2 hover:text-yellow-500">Contact</Link>
-            <Link href="/reservation" className="block py-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600">Reserve a Table</Link>
+          <div className="md:hidden bg-gray-800 px-6 py-4">
+            <Link href="/" className="block py-2 text-white hover:text-yellow-400">Home</Link>
+            <Link href="/menu" className="block py-2 text-white hover:text-yellow-400">Menu</Link>
+            <Link href="/about" className="block py-2 text-white hover:text-yellow-400">About Us</Link>
+            <Link href="/contact" className="block py-2 text-white hover:text-yellow-400">Contact</Link>
+            {/* Butoni "Reserve a Table" në versionin mobil ka `w-full` për ta bërë sa më të gjerë */}
+            <Link href="/reservation" className="block w-full py-3 bg-yellow-500 text-white text-center rounded-full hover:bg-yellow-600 transition duration-300">Reserve a Table</Link>
           </div>
         )}
       </header>
-
       
 
       
