@@ -10,36 +10,38 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white shadow-lg z-50">
-        <div className="container mx-auto flex justify-between items-center py-4 px-6">
-          <h1 className="text-3xl font-bold text-white">Luxury Eats</h1>
-          <nav className="hidden md:flex space-x-6 text-lg">
-            {/* Përdorim padding për të barazuar madhësinë e lidhjeve me butonin */}
-            <Link href="/" className="text-white px-4 py-2 hover:text-yellow-400 transition duration-300">Home</Link>
-            <Link href="/menu" className="text-white px-4 py-2 hover:text-yellow-400 transition duration-300">Menu</Link>
-            <Link href="/about" className="text-white px-4 py-2 hover:text-yellow-400 transition duration-300">About Us</Link>
-            <Link href="/contact" className="text-white px-4 py-2 hover:text-yellow-400 transition duration-300">Contact</Link>
-            <Link href="/reservation" className="px-4 py-2 bg-yellow-500 rounded-full text-white hover:bg-yellow-600 transition duration-300 shadow-lg">Reserve a Table</Link>
-          </nav>
-          <button
-            className="md:hidden text-3xl text-white focus:outline-none"
-            onClick={() => setNavbarOpen(!navbarOpen)}
-          >
-            &#9776;
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {navbarOpen && (
-          <div className="md:hidden bg-gray-800 px-6 py-4">
-            <Link href="/" className="block py-2 text-white hover:text-yellow-400">Home</Link>
-            <Link href="/menu" className="block py-2 text-white hover:text-yellow-400">Menu</Link>
-            <Link href="/about" className="block py-2 text-white hover:text-yellow-400">About Us</Link>
-            <Link href="/contact" className="block py-2 text-white hover:text-yellow-400">Contact</Link>
-            <Link href="/reservation" className="block w-full py-3 bg-yellow-500 text-white text-center rounded-full hover:bg-yellow-600 transition duration-300">Reserve a Table</Link>
-          </div>
-        )}
-      </header>
+      <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-black via-gray-800 to-gray-700 text-white shadow-lg z-50">
+  <div className="container mx-auto flex justify-between items-center py-4 px-6">
+    {/* Titulli me ngjyrë të artë */}
+    <h1 className="text-3xl font-serif font-bold text-[#D4AF37]">Luxury Eats</h1>
+    <nav className="hidden md:flex space-x-6 text-lg">
+      {/* Lidhjet me tipografi elegante dhe ngjyra të artë gjatë hover-it */}
+      <Link href="/" className="text-white px-4 py-2 hover:text-[#FFD700] transition-all duration-500">Home</Link>
+      <Link href="/menu" className="text-white px-4 py-2 hover:text-[#FFD700] transition-all duration-500">Menu</Link>
+      <Link href="/about" className="text-white px-4 py-2 hover:text-[#FFD700] transition-all duration-500">About Us</Link>
+      <Link href="/contact" className="text-white px-4 py-2 hover:text-[#FFD700] transition-all duration-500">Contact</Link>
+      {/* Butoni me ngjyrë të artë dhe hije */}
+      <Link href="/reservation" className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#F9C74F] text-gray-900 font-semibold rounded-full hover:from-[#F9C74F] hover:to-[#D4AF37] transition-all duration-500 transform hover:scale-105 shadow-lg">
+        Reserve a Table
+      </Link>
+    </nav>
+    <button
+      className="md:hidden text-3xl text-white focus:outline-none"
+      onClick={() => setNavbarOpen(!navbarOpen)}
+    >
+      &#9776;
+    </button>
+  </div>
+  {navbarOpen && (
+    <div className="md:hidden bg-gray-800 px-6 py-4">
+      <Link href="/" className="block py-2 text-white hover:text-[#FFD700]">Home</Link>
+      <Link href="/menu" className="block py-2 text-white hover:text-[#FFD700]">Menu</Link>
+      <Link href="/about" className="block py-2 text-white hover:text-[#FFD700]">About Us</Link>
+      <Link href="/contact" className="block py-2 text-white hover:text-[#FFD700]">Contact</Link>
+      <Link href="/reservation" className="block w-full py-3 bg-yellow-500 text-white text-center rounded-full hover:bg-yellow-600 transition duration-300">Reserve a Table</Link>
+    </div>
+  )}
+</header>
       
 
       
@@ -97,7 +99,7 @@ export default function Home() {
   <h1 className="text-5xl font-extrabold mb-4 text-white">A Fresh Take on Mediterranean</h1> {/* Ngjyra e bardhë */}
   <p className="text-lg mb-8 text-white">Discover the rich flavors of the Mediterranean, crafted with care.</p> {/* Tekst i bardhë */}
   <Link href="/menu">
-            <button className="px-6 py-3 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition duration-300">
+            <button className="px-6 py-3 bg-gradient-to-r from-[#D4AF37] to-[#F9C74F] text-white font-semibold rounded-full hover:from-[#F9C74F] hover:to-[#D4AF37] transition-all duration-500 transform hover:scale-105 shadow-lg">
               Explore Our Menu
             </button>
           </Link>
@@ -115,43 +117,46 @@ export default function Home() {
 
     {/* Grid me 6 pjata në total */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border-2 border-[#D4AF37] rounded-lg">
         <h3 className="text-2xl font-bold mb-4">Falafel</h3>
         <p>A Mediterranean classic served with tahini and fresh herbs.</p>
         <p className="text-lg font-bold mt-4">$12.00</p>
       </div>
 
-      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border-2 border-[#D4AF37] rounded-lg">
         <h3 className="text-2xl font-bold mb-4">Shawarma</h3>
         <p>Spit-roasted and seasoned chicken, served with pickles and garlic sauce.</p>
         <p className="text-lg font-bold mt-4">$15.00</p>
       </div>
 
-      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border-2 border-[#D4AF37] rounded-lg">
         <h3 className="text-2xl font-bold mb-4">Kefta</h3>
         <p>Grilled ground beef and lamb, served with amba and fresh salads.</p>
         <p className="text-lg font-bold mt-4">$18.00</p>
       </div>
 
       {/* Shtimi i tre pjatave të reja */}
-      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border-2 border-[#D4AF37] rounded-lg">
         <h3 className="text-2xl font-bold mb-4">Hummus & Pita</h3>
         <p>Creamy hummus served with warm pita bread and olive oil.</p>
         <p className="text-lg font-bold mt-4">$10.00</p>
       </div>
 
-      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border-2 border-[#D4AF37] rounded-lg">
         <h3 className="text-2xl font-bold mb-4">Grilled Salmon</h3>
         <p>Freshly grilled salmon served with garlic butter and lemon.</p>
         <p className="text-lg font-bold mt-4">$22.00</p>
       </div>
 
-      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      <div className="bg-white p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border-2 border-[#D4AF37] rounded-lg">
         <h3 className="text-2xl font-bold mb-4">Stuffed Grape Leaves</h3>
         <p>Traditional stuffed grape leaves filled with rice and herbs.</p>
         <p className="text-lg font-bold mt-4">$8.00</p>
       </div>
     </div>
+  
+
+
 
     {/* Butoni për faqen e plotë të menusë me animacion */}
     <div className="mt-12">
@@ -199,8 +204,8 @@ export default function Home() {
     </div>
   </div>
 
-  {/* Footer bottom - Social links and copyright */}
-  <div className="mt-8 border-t border-gray-700 pt-6 text-center">
+  {/*min-h-screen bg-gradient-to-br from-[#2C2C2C] via-[#1C1C1C] to-[#111111] text-white py-20*/}
+  <div className="mt-8 border-t border-gray-700 pt-6 text-center  ">
     <p>&copy; 2024 Luxury Eats. All rights reserved.</p>
     <div className="flex justify-center space-x-6 mt-4">
       <a href="https://facebook.com" className="hover:text-yellow-500">Facebook</a>
